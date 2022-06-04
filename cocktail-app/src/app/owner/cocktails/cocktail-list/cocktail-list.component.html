@@ -1,0 +1,14 @@
+<h2>Overview cocktails</h2>
+<nz-list nzBordered nzSize="small">
+    <nz-list-item>
+        <div class="flexContainer">
+            <i (click)="addNewCocktail()" nz-icon nzType="plus-circle"></i>
+            <i (click)="setMenu()" nz-icon nzType="unordered-list" nzTheme="outline"></i>
+        </div>
+    </nz-list-item>
+
+    <div *ngFor="let cocktail of cocktails | async">
+        <app-cocktail-list-item (isDeletedEvent)="reloadList($event)" [cocktail]="cocktail"></app-cocktail-list-item>
+        <nz-divider></nz-divider>
+    </div>
+</nz-list>

@@ -1,0 +1,36 @@
+nz-divider {
+    margin: 0px;
+}
+h2 {
+    color: #989265;
+    margin: 1rem -1rem;
+    text-align: center;
+    margin-left: 1rem;
+}
+#saveIcon {
+    font-size: 3rem;
+}
+#backIcon {
+    font-size: 2rem;
+}
+i {
+    color: #FEFAE6;
+}
+.flexContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+}
+.flexContainerTitle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+}

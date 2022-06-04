@@ -1,0 +1,7 @@
+<h2>The menu for tonight</h2>
+<nz-list nzBordered nzSize="small">
+    <div *ngFor="let cocktail of cocktails | async">
+        <app-cocktail-menu-item [cocktail]="cocktail"></app-cocktail-menu-item>
+        <nz-divider></nz-divider>
+    </div>
+</nz-list>

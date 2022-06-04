@@ -1,0 +1,72 @@
+<nz-card nzTitle="{{ title }}">
+    <!-- name -->
+    <form nz-form nz-layout="vertical" [formGroup]="form" (ngSubmit)="submitForm()">
+        <nz-form-item>
+            <nz-form-label [nzSpan]="4" nzRequired nzFor="name">Name</nz-form-label>
+            <nz-form-control nzErrorTip="Please input a cocktail name">
+                <input type="text" nz-input formControlName="name" placeholder="Cocktail name" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- ingredients  -->
+        <nz-list nzBordered nzSize="small">
+            <nz-list-header>Ingredients</nz-list-header>
+            <nz-list-item *ngFor="let ingr of ingredients; let i = index">- {{ingr.amount}} {{ingr.unit}} {{ ingr.name }}
+                <button nz-button nzType="primary" nzShape="circle" (click)="removeIngredient(i)"><i nz-icon nzType="minus"></i></button>
+            </nz-list-item>
+            <nz-list-footer>
+                <button type="button" nz-button nzShape="circle" nzType="primary" (click)="open()">
+          <i nz-icon nzType="plus"></i>
+        </button>
+            </nz-list-footer>
+        </nz-list>
+
+        <!-- recipe -->
+        <nz-form-item>
+            <nz-form-label [nzSpan]="4" nzFor="recipe">Recipe</nz-form-label>
+            <nz-form-control [nzSpan]="8">
+                <textarea rows="4" nz-input formControlName="recipe" placeholder="Recipe"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+
+        <div style="float: right">
+            <button nz-button type="button" style="margin-right: 8px;" (click)="goBack()">Cancel</button>
+            <button nz-button nzType="primary">Save</button>
+        </div>
+    </form>
+</nz-card>
+
+
+<nz-drawer nzHeight="70%" nzPlacement="bottom" [nzClosable]="true" [nzMaskClosable]="false" [nzVisible]="visible" nzTitle="New ingredient" (nzOnClose)="close()">
+    <form nz-layout="vertical" [formGroup]="formIngredient" (ngSubmit)="submitIngredientForm()" nz-form *nzDrawerContent>
+        <div nz-row>
+            <nz-form-item>
+                <nz-form-label nzRequired nzFor="name">Name</nz-form-label>
+                <nz-form-control nzErrorTip="Please input an ingredient name">
+                    <input nz-input type="text" formControlName="name" placeholder="ingredient name" />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-row>
+            <nz-form-item>
+                <nz-form-label nzFor="amount">Amount</nz-form-label>
+                <nz-form-control>
+                    <input nz-input type="number" formControlName="amount" placeholder="amount" />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-row>
+            <nz-form-item>
+                <nz-form-label nzFor="unit">Unit</nz-form-label>
+                <nz-form-control>
+                    <input nz-input type="text" formControlName="unit" placeholder="unit" />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+        <div style="float: right">
+            <button nz-button type="button" style="margin-right: 8px;" (click)="close()">Cancel</button>
+            <button nz-button type="submit" nzType="primary">Add</button>
+        </div>
+    </form>
+</nz-drawer>

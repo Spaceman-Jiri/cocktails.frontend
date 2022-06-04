@@ -1,0 +1,10 @@
+h2 {
+    text-align: center;
+}
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+}

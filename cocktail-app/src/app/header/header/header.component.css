@@ -1,0 +1,25 @@
+.header {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    flex-flow: row nowrap;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: #F9F2CB;
+    border-top: 2px solid #F9F2CB;
+    padding: 2rem;
+}
+.header h3 {
+    font-size: 2.8rem;
+    color: #F9F2CB;
+}
+.header p {
+    margin-right: 1rem;
+}
+a {
+    color: #F9F2CB;
+}

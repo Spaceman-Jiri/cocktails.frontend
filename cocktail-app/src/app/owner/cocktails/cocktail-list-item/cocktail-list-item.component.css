@@ -1,0 +1,23 @@
+nz-list-item-meta-description {
+    font-style: italic;
+}
+nz-list-item-meta-title div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+i {
+    color: #FEFAE6;
+}
+ul {
+    width: 8rem;
+}
+::ng-deep .ant-list-item-meta-title {
+    color: #FFF542;
+}
+::ng-deep .ant-list-item-meta-description {
+    color: #FEFAE6;
+}
+::ng-deep .ant-list-bordered {
+    border: 1px solid #FEFAE6;
+}
